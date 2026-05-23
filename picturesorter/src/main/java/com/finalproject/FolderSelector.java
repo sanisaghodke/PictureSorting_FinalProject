@@ -1,20 +1,25 @@
+package com.finalproject;
 import java.awt.GridLayout;
-import java.awt.event.*;
-import javax.swing.*;
-import javax.swing.filechooser.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.filechooser.FileSystemView;
 public class FolderSelector extends JFrame implements ActionListener{
-	String inputDirectory;
-	String outputDirectory;
 
 	static JLabel inputDirectoryLabel;
 	static JLabel outputDirectoryLabel;
 
 	public String getInput(){
-		return this.inputDirectory;
+		return this.inputDirectoryLabel.getText();
 	}
 	
 	public String getOutput(){
-		return this.outputDirectory;
+		return this.outputDirectoryLabel.getText();
 	}
 
 	public static void main(String args[]){
