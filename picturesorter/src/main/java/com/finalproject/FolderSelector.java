@@ -51,6 +51,7 @@ public class FolderSelector extends JFrame implements ActionListener{
         // response on buttons
         inputButton.addActionListener(f1);
 		outputButton.addActionListener(f1);
+        okButton.addActionListener(f1);
 
         // make a panel to add the buttons and labels
         GridLayout buttonLayout = new GridLayout(3,2);
@@ -98,7 +99,7 @@ public class FolderSelector extends JFrame implements ActionListener{
                 outputDirectoryLabel.setText("the user cancelled the operation");
         }
         // if the user presses the open dialog show the open dialog
-        else {
+        else if (com.equals("input directory")) {
             // create an object of JFileChooser class
             JFileChooser j = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
 
@@ -115,6 +116,12 @@ public class FolderSelector extends JFrame implements ActionListener{
             // if the user cancelled the operation
             else
                 inputDirectoryLabel.setText("the user cancelled the operation");
+        }else {
+            // if the user presses the OK button, call the folder processor method
+            System.out.println("ok");
+            System.out.println(inputDirectoryLabel.getText());
+            System.out.println(outputDirectoryLabel.getText());
+            ImageMetadataSorter.folderProcessor(inputDirectoryLabel.getText(), outputDirectoryLabel.getText());
         }
     }
 }
