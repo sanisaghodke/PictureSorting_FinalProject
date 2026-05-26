@@ -68,8 +68,6 @@ public class FolderSelector extends JFrame implements ActionListener{
 		p.add(emptyLabel);
 		p.add(okButton);
 
-		// set the label to its initial value
-
         // add panel to the frame
         fileChooser.add(p);
 
